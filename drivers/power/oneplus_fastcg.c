@@ -1183,11 +1183,11 @@ static int dash_probe(struct i2c_client *client, const struct i2c_device_id *id)
 	return 0;
 
 err_misc_register_failed:
+	wake_lock_destroy(&di->fastchg_wake_lock);
+	wake_lock_destroy(&di->fastchg_update_fireware_lock);
 err_read_dt:
 	kfree(di);
 err_check_functionality_failed:
-	wake_lock_destroy(&di->fastchg_wake_lock);
-	wake_lock_destroy(&di->fastchg_update_fireware_lock);
 	pr_err("dash_probe fail\n");
 	return 0;
 }

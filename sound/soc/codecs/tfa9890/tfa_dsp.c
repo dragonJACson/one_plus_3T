@@ -924,7 +924,7 @@ static int tfa98xx_startup(struct tfa98xx *tfa98xx)
             break;
         default:
             break;
-    }    
+    }
 	/*
 	 * wait until the DSP subsystem hardware is ready
 	 *    note that the DSP CPU is not running (RST=1)
@@ -1248,11 +1248,13 @@ int tfa98xx_set_volume(struct tfa98xx *tfa98xx, u32 voldB)
 	struct snd_soc_codec *codec = tfa98xx->codec;
 	u16 value;
 	int volume_value;
+
 #ifdef CONFIG_SOUND_CONTROL
 	s64 cur_volume;
 
 	tfa98xx_get_volume(tfa98xx, &cur_volume);
 #endif
+
 	value = snd_soc_read(codec, TFA98XX_AUDIO_CTR);
 
 	/*

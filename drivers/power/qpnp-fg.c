@@ -5437,6 +5437,10 @@ static irqreturn_t fg_mem_avail_irq_handler(int irq, void *_chip)
 	return IRQ_HANDLED;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> lineage/lineage-16.0
 static irqreturn_t fg_empty_soc_irq_handler(int irq, void *_chip)
 {
 	struct fg_chip *chip = _chip;
